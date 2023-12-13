@@ -1,0 +1,30 @@
+version: "3.7"
+
+services:
+
+  nginx:
+    image: dumptec/nginx:dev-1.25.2
+    hostname: webserver
+    container_name: nginx
+    working_dir: /app
+    ports:
+        - "80:8080"
+    links:
+      - phpfpm
+    volumes:
+        - ./app:/app
+        - ./docker/site.conf:/etc/nginx/conf.d/default.conf:ro
+        - ./docker/ssl/datestarxxx.com.crt:/etc/ssl/datestarxxx.com.crt:ro
+        - ./docker/ssl/datestarxxx.com.key:/etc/ssl/datestarxxx.com.key:ro
+        - ./docker/ssl/datestarxxx.com.pem:/etc/ssl/datestarxxx.com.pem:ro
+
+  phpfpm:
+    image: dumptec/php-fpm:dev-8.2-latest
+    container_name: phpfpm
+    working_dir: /app
+    extra_hosts:
+        - "host.docker.internal:host-gateway"
+    user: "dump"
+    restart: on-failure
+    volumes:
+        - ./app:/app
