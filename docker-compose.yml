@@ -4,7 +4,6 @@ services:
 
   nginx:
     image: dumptec/nginx:dev-1.25.2
-    hostname: webserver
     container_name: nginx
     working_dir: /app
     ports:
@@ -22,9 +21,6 @@ services:
     image: dumptec/php-fpm:dev-8.2-latest
     container_name: phpfpm
     working_dir: /app
-    extra_hosts:
-        - "host.docker.internal:host-gateway"
-    user: "dump"
     restart: on-failure
     volumes:
         - ./app:/app
