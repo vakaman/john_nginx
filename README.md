@@ -23,3 +23,20 @@ vim /etc/resolv.conf
 ```shell
 docker-compose up
 ```
+
+## Response to user
+```shell
+You'll need a few things to test this out.
+
+Download the repository from GitHub.
+Configure the host as indicated in the README file.
+With Docker installed, navigate to the project folder.
+Place your project inside the 'app' folder or adjust it to the desired path.
+Start the system with 'docker-compose up'.
+Give it a try!
+```
+
+## Conclusion
+```text
+The work was successfully completed, the file refactoring was finished and delivered to the client. However, they didn't understand that the action solved the issue. I believe the client didn't want to validate if the configuration resolved the problem before deploying it to production.
+```
