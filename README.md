@@ -25,7 +25,7 @@ docker-compose up
 ```
 
 ## Response to user
-```shell
+```text
 You'll need a few things to test this out.
 
 Download the repository from GitHub.
@@ -38,5 +38,7 @@ Give it a try!
 
 ## Conclusion
 ```text
-The work was successfully completed, the file refactoring was finished and delivered to the client. However, they didn't understand that the action solved the issue. I believe the client didn't want to validate if the configuration resolved the problem before deploying it to production.
+The work was successfully completed, the file refactoring was finished and delivered to the client.
+However, they didn't understand that the action solved the issue.
+I believe the client didn't want to validate if the configuration resolved the problem before deploying it to production.
 ```
